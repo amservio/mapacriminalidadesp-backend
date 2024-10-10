@@ -59,6 +59,7 @@ if 'DATA_OCORRENCIA_BO' in df.columns and df['DATA_OCORRENCIA_BO'].dtype != 'str
     df['DATA_OCORRENCIA_BO'] = df['DATA_OCORRENCIA_BO'].dt.strftime('%Y-%m-%d %H:%M:%S')
     
 df = df.fillna(np.nan).replace([np.nan], [None])
+df = df.head(500)
 st.dataframe(df.head(20))
 
 
